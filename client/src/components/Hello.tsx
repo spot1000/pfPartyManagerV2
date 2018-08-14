@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Button } from './Button'
 
 export interface Props {
   name: string;
@@ -8,7 +9,7 @@ export interface Props {
   onChangeName?: () => void;
 }
 
-function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onChangeName }: Props) {
+const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onChangeName }: Props) => {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -19,9 +20,10 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onChangeNa
         Hello {name + getExclamationMarks(enthusiasmLevel)}
       </div>
       <div>
-        <button onClick={onDecrement}>-</button>
-        <button onClick={onIncrement}>+</button>
-        <button onClick={onChangeName}>Not Typescript</button>
+
+        <Button onClick={onDecrement} name='-' />
+        <Button onClick={onIncrement} name='+' />
+        <Button onClick={onChangeName} name='Not Typescript' />
       </div>
     </div>
   );
