@@ -23,7 +23,7 @@ const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onChangeNa
 
         <Button onClick={onDecrement} name='-' />
         <Button onClick={onIncrement} name='+' />
-        <Button onClick={onChangeName} name='Not Typescript' />
+        <Button onClick={onChangeName} name={name} />
       </div>
     </div>
   );

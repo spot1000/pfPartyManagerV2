@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
-import Hello from './components/Hello';
+import Hello from './containers/Hello';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const logo = require('./logo.svg');
 
@@ -14,9 +15,19 @@ function App() {
       <p className="App-intro">
         To get started, edit <code>src/App.tsx</code> and save to reload.
       </p>
-      <Hello name="TypeScript" />
     </div>
   );
 }
 
-export default App;
+const Routes = () => (
+  <Router>
+    <Switch>
+      <Route exact path='/' component={App} />
+      <Route path='/hello' component={Hello} />
+    </Switch>
+  </Router>
+)
+
+
+
+export default Routes;

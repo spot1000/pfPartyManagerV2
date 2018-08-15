@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import Hello from './containers/Hello';
+import Routes from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { enthusiasm } from './reducers/index';
@@ -22,7 +22,7 @@ composeEnhancers());
 
 ReactDOM.render(
   <Provider store={store}>
-    <Hello />
+    <Routes />
   </Provider>,
   document.getElementById('root') as HTMLElement
 );
