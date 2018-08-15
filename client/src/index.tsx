@@ -4,8 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { BrowserRouter } from 'react-router-dom'
 // import createBrowserHistory from 'history/createBrowserHistory'
 
-
-import { Starter } from './App';
+import Routes from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { enthusiasm } from './reducers/index';
@@ -26,12 +25,8 @@ composeEnhancers());
 // const history = createBrowserHistory()
 
 ReactDOM.render(
-
-  
-    <Provider store={store}>
-    <BrowserRouter >
-      <Starter />
-      </BrowserRouter >
-    </Provider>,
+  <Provider store={store}>
+    <Routes />
+  </Provider>,
   document.getElementById('root') as HTMLElement
 );
