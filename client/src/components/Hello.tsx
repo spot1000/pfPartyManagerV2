@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from './Button'
+import Button from '@material-ui/core/Button';
 
 export interface Props {
   name: string;
@@ -21,9 +21,9 @@ const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onChangeNa
       </div>
       <div>
 
-        <Button onClick={onDecrement} name='-' />
-        <Button onClick={onIncrement} name='+' />
-        <Button onClick={onChangeName} name={name} />
+        <Button variant="contained" color="primary" onClick={onDecrement}>-</Button>
+        <Button variant="contained" color="primary" onClick={onIncrement}>+</Button>
+        <Button variant="contained" color="primary" onClick={onChangeName}>{name}</Button>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { BrowserRouter } from 'react-router-dom'
+// import { BrowserRouter } from 'react-router-dom'
 // import createBrowserHistory from 'history/createBrowserHistory'
 
 import Routes from './App';
@@ -12,6 +12,7 @@ import { StoreState } from './types/index';
 import { EnthusiasmAction } from './actions/index'
 
 import './index.css';
+import 'typeface-roboto'
 
 const composeEnhancers = composeWithDevTools({});
 
