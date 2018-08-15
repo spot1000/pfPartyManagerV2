@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom'
+// import createBrowserHistory from 'history/createBrowserHistory'
 
 import Routes from './App';
 import { Provider } from 'react-redux';
@@ -19,6 +21,8 @@ const store = createStore<StoreState, EnthusiasmAction, any, any>(enthusiasm, {
   languageName: 'TypeScript',
 },
 composeEnhancers());
+
+// const history = createBrowserHistory()
 
 ReactDOM.render(
   <Provider store={store}>
