@@ -7,9 +7,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import Routes from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { enthusiasm } from './reducers/rootReducer';
-import { StoreState } from './types';
-import { EnthusiasmAction } from './actions'
+import rootReducer from './reducers/rootReducer';
+import { rootState } from './types';
+import { AllActions } from './actions/allActions'
 
 import './index.css';
 import 'typeface-roboto'
@@ -17,10 +17,7 @@ import 'typeface-roboto'
 const composeEnhancers = composeWithDevTools({});
 
 
-const store = createStore<StoreState, EnthusiasmAction, any, any>(enthusiasm, {
-  enthusiasmLevel: 1,
-  languageName: 'TypeScript',
-},
+const store = createStore<rootState, AllActions, any, any>(rootReducer, {},
 composeEnhancers());
 
 // const history = createBrowserHistory()

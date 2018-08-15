@@ -1,5 +1,14 @@
-export interface StoreState {
+
+export interface characterSheetState {
+    fieldValue: any
+}
+
+export interface enthusiasmState {
     languageName: string;
     enthusiasmLevel: number;
-    fieldValue: any
+}
+
+export interface rootState {
+    languageName: string;
+    enthusiasmLevel: number;
 }

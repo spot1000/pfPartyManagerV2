@@ -13,15 +13,7 @@ export interface ChangeName {
     type: constants.CHANGE_NAME;
 }
 
-export interface UpdateField {
-    type: constants.UPDATE_FIELD;
-    payload: {
-        fieldName : string;
-        fieldValue: any
-    }
-}
-
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm | ChangeName | UpdateField;
+export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm | ChangeName;
 
 export function incrementEnthusiasm(): IncrementEnthusiasm {
     return {
@@ -38,15 +30,5 @@ export function decrementEnthusiasm(): DecrementEnthusiasm {
 export function changeName(): ChangeName {
     return {
         type: constants.CHANGE_NAME
-    };
-}
-
-export function updateField(fieldName:string, fieldValue:string): UpdateField {
-    return {
-        type: constants.UPDATE_FIELD,
-        payload: {
-            fieldName,
-            fieldValue
-        }
     };
 }
