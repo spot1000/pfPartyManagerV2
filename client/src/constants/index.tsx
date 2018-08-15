@@ -6,3 +6,6 @@ export type DECREMENT_ENTHUSIASM = typeof DECREMENT_ENTHUSIASM;
 
 export const CHANGE_NAME = 'CHANGE_NAME';
 export type CHANGE_NAME = typeof CHANGE_NAME;
+
+export const UPDATE_FIELD = 'UPDATE_FIELD';
+export type UPDATE_FIELD = typeof UPDATE_FIELD;

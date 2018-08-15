@@ -7,9 +7,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import Routes from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { enthusiasm } from './reducers/index';
-import { StoreState } from './types/index';
-import { EnthusiasmAction } from './actions/index'
+import { enthusiasm } from './reducers/rootReducer';
+import { StoreState } from './types';
+import { EnthusiasmAction } from './actions'
 
 import './index.css';
 import 'typeface-roboto'

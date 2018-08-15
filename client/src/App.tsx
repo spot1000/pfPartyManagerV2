@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 import Hello from './containers/Hello';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import CharacterSheet from './components/CharacterSheet';
 
 
 const logo = require('./logo.svg');
@@ -19,11 +20,14 @@ function App() {
     </div>
   );
 }
+
+
 const Routes = () => (
   <Router>
     <Switch>
       <Route exact path='/' component={App} />
       <Route path='/hello' component={Hello} />
+      <Route path='/CS' component={CharacterSheet} />
     </Switch>
   </Router>
 )

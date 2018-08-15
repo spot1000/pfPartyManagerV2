@@ -1,7 +1,7 @@
 
 import { EnthusiasmAction } from '../actions';
-import { StoreState } from '../types/index';
-import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM, CHANGE_NAME } from '../constants/index';
+import { StoreState } from '../types';
+import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM, CHANGE_NAME, UPDATE_FIELD } from '../constants';
 
 export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
   switch (action.type) {
@@ -11,6 +11,8 @@ export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreSt
       return { ...state, enthusiasmLevel: Math.max(1, state.enthusiasmLevel - 1) };
     case CHANGE_NAME:
       return { ...state, languageName: 'name changed' };
+    case UPDATE_FIELD:
+      return { ...state, [action.payload.fieldName] : action.payload.fieldValue };
     default:
       return state;
   }

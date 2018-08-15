@@ -7,9 +7,10 @@ export interface Props {
   onIncrement?: () => void;
   onDecrement?: () => void;
   onChangeName?: () => void;
+  onUpdateValue: (field:string, value:any) => void;
 }
 
-const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onChangeName }: Props) => {
+const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onUpdateValue }: Props) => {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -23,7 +24,7 @@ const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement, onChangeNa
 
         <Button variant="contained" color="primary" onClick={onDecrement}>-</Button>
         <Button variant="contained" color="primary" onClick={onIncrement}>+</Button>
-        <Button variant="contained" color="primary" onClick={onChangeName}>{name}</Button>
+        <Button variant="contained" color="primary" onClick={(e) => onUpdateValue('test', name)}>{name}</Button>
       </div>
     </div>
   );
