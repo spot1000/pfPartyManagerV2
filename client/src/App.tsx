@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import Hello from './components/Hello';
+import { Route, Switch } from 'react-router-dom'
 
 const logo = require('./logo.svg');
 
@@ -14,9 +15,18 @@ function App() {
       <p className="App-intro">
         To get started, edit <code>src/App.tsx</code> and save to reload.
       </p>
-      <Hello name="TypeScript" />
+      
     </div>
   );
 }
 
-export default App;
+export const Starter = () => {
+  return (
+      <Switch>
+        <Route exact path="/" component={Hello}/>
+        <Route path="/app" component={App}/>
+      </Switch>
+  )
+}
+
+export default Starter
