@@ -2,7 +2,7 @@ import * as React from 'react';
 import './App.css';
 import Hello from './containers/HelloContainer';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import CharacterSheet from './components/CharacterSheet';
+import CharacterSheet from './containers/CharacterSheetContainer';
 
 
 const logo = require('./logo.svg');

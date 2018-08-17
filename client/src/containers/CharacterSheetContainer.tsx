@@ -1,12 +1,27 @@
-import Hello from '../components/Hello';
+import CharacterSheet from '../components/CharacterSheet';
 import * as actions from '../actions/characterSheetActions';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import { RootState } from '../reducers/rootReducer'
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.characterSheetActions>) {
+export function mapStateToProps(state: RootState) {
   return {
-    onUpdateValue: (field:string, value:any) => dispatch(actions.UpdateFormField(field, value))
+    partyCode: state.characterSheet.partyCode,
+    playerName: state.characterSheet.playerName,
+    characterName: state.characterSheet.characterName,
+    characterClass: state.characterSheet.characterClass,
+    race: state.characterSheet.race,
+    level: state.characterSheet.level,
+    perceptionTotal:state.characterSheet.perceptionTotal,
+    maxHP: state.characterSheet.maxHP
   };
 }
 
-export default connect(mapDispatchToProps)(Hello);
+export function mapDispatchToProps(dispatch: Dispatch<actions.characterSheetActions>) {
+  return {
+    onUpdateValue: (field:string, value:any) => dispatch(actions.UpdateFormField(field, value)),
+    clearForm: () => dispatch(actions.ClearForm())
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterSheet);

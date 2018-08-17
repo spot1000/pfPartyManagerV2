@@ -13,5 +13,5 @@ export type CHANGE_NAME = typeof CHANGE_NAME;
 export const UPDATE_FORM_FIELD = 'UPDATE_FORM_FIELD';
 export type UPDATE_FORM_FIELD = typeof UPDATE_FORM_FIELD;
 
-export const TEST = 'TEST';
-export type TEST = typeof TEST;
+export const CLEAR_FORM = 'CLEAR_FORM';
+export type CLEAR_FORM = typeof CLEAR_FORM;

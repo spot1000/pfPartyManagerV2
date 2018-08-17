@@ -2,9 +2,9 @@ import Hello from '../components/Hello';
 import * as actions from '../actions/enthusiasmActions';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { ApplicationState } from '../reducers/rootReducer'
+import { RootState } from '../reducers/rootReducer'
 
-export function mapStateToProps(state: ApplicationState) {
+export function mapStateToProps(state: RootState) {
   return {
     enthusiasmLevel : state.enthusiasm.enthusiasmLevel,
     name: state.enthusiasm.languageName,

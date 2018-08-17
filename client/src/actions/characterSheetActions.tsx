@@ -5,18 +5,28 @@ export interface UpdateFormField {
     type: constants.UPDATE_FORM_FIELD;
     payload: {
         fieldName : string;
-        fieldValue: any
+        fieldValue: string | number;
     }
 }
 
-export type characterSheetActions = UpdateFormField;
+export interface ClearForm {
+    type: constants.CLEAR_FORM;
+}
 
-export function UpdateFormField(fieldName:string, fieldValue:string): UpdateFormField {
+export type characterSheetActions = UpdateFormField | ClearForm;
+
+export function UpdateFormField(fieldName:string, fieldValue:string | number): UpdateFormField {
     return {
         type: constants.UPDATE_FORM_FIELD,
         payload: {
             fieldName,
             fieldValue
         }
+    };
+}
+
+export function ClearForm(): ClearForm {
+    return {
+        type: constants.CLEAR_FORM
     };
 }

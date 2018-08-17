@@ -1,6 +1,13 @@
 
 export interface characterSheetState {
-    fieldValue: any
+    partyCode: string,
+    playerName: string,
+    characterName: string,
+    characterClass: string,
+    race:string,
+    level: number | string,
+    perceptionTotal: number | string,
+    maxHP: number | string
 }
 
 export interface enthusiasmState {

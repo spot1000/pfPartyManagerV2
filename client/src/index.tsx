@@ -11,9 +11,6 @@ import Store from './store/configureStore'
 import './index.css';
 import 'typeface-roboto'
 
-const appStore = Store
-
-
 // const store = createStore<ApplicationState, AllActions, any, any>(rootReducer, {
 //   enthusiasmLevel: 1,
 //   languageName: 'TypeScript',
@@ -23,7 +20,7 @@ const appStore = Store
 // const history = createBrowserHistory()
 
 ReactDOM.render(
-  <Provider store={appStore}>
+  <Provider store={Store}>
     <Routes />
   </Provider>,
   document.getElementById('root') as HTMLElement
